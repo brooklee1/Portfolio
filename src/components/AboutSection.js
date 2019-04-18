@@ -4,12 +4,16 @@ import React from "react"
 import styled from "styled-components"
 
 const AboutWrapper = styled.div`
-  background-color: #01020f;
   display: grid;
   grid-template-columns: 70% 30%;
   position: relative;
   height: 100vh;
   scroll-snap-align: start;
+
+  @media (max-width: 860px) {
+     height: auto;
+    grid-template-columns: 1fr;
+  }
 `
 
 const Title = styled.h2`
@@ -18,6 +22,20 @@ const Title = styled.h2`
   font-size: 30px;
   margin: 10px 50px;
   padding-top: 50px;
+
+  @media (max-width: 700px) {
+    font-size: 25px;
+    margin: 10px 15px;
+  }
+`
+
+const Title2 = styled.h2`
+  color:rgba(255,255,255,.7);
+  font-family: "Source Code Pro", monospace;
+  font-size: 30px;
+  margin: 10px 50px;
+  padding-top: 50px;
+  text-align: center;
 
   @media (max-width: 700px) {
     font-size: 25px;
@@ -36,15 +54,29 @@ const About = styled.p`
 
 const ImagePortfolio = styled.img`
   z-index: 40;
-  max-width: 300px;
+  max-width: 400px;
   width: 300%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 15%;
+  right: 20%;
+
+   @media (max-width: 2000px) {
+    right: 20%;
+  }
+
+ @media (max-width: 1730px) {
+    max-width: 300px;
+    right: 15%;
+  }
+
+  @media (max-width: 860px){
+    display:none;
+  }
 `
 
-const SocialFollow = styled.div`
+const SocialFollowWrapper = styled.div`
+  justify-items: center;
   background: rgb(27, 0, 147);
   background: rgb(27, 0, 147);
   background: linear-gradient(
@@ -57,6 +89,16 @@ const SocialFollow = styled.div`
   );
 `
 
+const SocialFollow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-items: center;
+
+  @media (max-width: 445px){
+    grid-template-columns: repeat(2, auto);
+  }
+`
+
 const IFrame = styled.iframe`
   /* transform: scale(0.7); */
   width: 100%;
@@ -66,38 +108,102 @@ const IFrame = styled.iframe`
 `
 
 const SocialImg1 = styled.div`
+  z-index: 41;
   position: absolute;
-  top: 30%;
-  transform: translateY(-30%);
-  right: 17%;
+  top: 35%;
+  /* transform: translateY(-35%); */
+  right: 19%;
   cursor: pointer;
   transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   :hover {
-    transform: scale(1.05, 1.05);
-    /* transition: all 0.2s ease-in-out; */
+    transform: scale(1.2, 1.2);
+ 
+  }
+
+  @media (max-width: 1730px) {
+  top: 35%;
+  /* transform: translateY(-35%); */
+  right: 17%;
+  }
+
+  @media (max-width: 860px){
+     position:static;
   }
 `
 const SocialImg2 = styled.img`
   position: absolute;
-  top: 40%;
-  transform: translateY(-40%);
-  right: 12%;
+  top: 43%;
+  /* transform: translateY(-43%); */
+  right: 16%;
+  cursor: pointer;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  :hover {
+    transform: scale(1.2, 1.2);
+ 
+  }
+
+  @media (max-width: 1730px) {
+  top: 43%;
+  /* transform: translateY(-43%); */
+  right: 11%;
+  }
+
+  @media (max-width: 860px){
+    position:static;
+  }
 `
 
 const SocialImg3 = styled.img`
   position: absolute;
   top: 55%;
-  transform: translateY(-55%);
+  /* transform: translateY(-55%); */
+  right: 16%;
+  cursor: pointer;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  :hover {
+    transform: scale(1.2, 1.2);
+ 
+  }
+
+  @media (max-width: 1730px) {
+  top: 55%;
+  /* transform: translateY(-55%); */
   right: 11%;
+  }
+
+  @media (max-width: 860px){
+     position:static;
+  }
 `
 
 const SocialImg4 = styled.img`
   position: absolute;
-  top: 67%;
-  transform: translateY(-67%);
-  right: 14%;
+  top: 65%;
+  /* transform: translateY(-65%); */
+  right: 19%;
+  cursor: pointer;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  :hover {
+    transform: scale(1.2, 1.2);
+ 
+  }
+
+  @media (max-width: 1730px) {
+  top: 65%;
+  /* transform: translateY(-65%); */
+  right: 17%;
+  }
+
+  @media (max-width: 860px){
+    position:static;
+  }
 `
+
+
 
 const AboutSection = ({ siteTitle }) => (
   <AboutWrapper id="About">
@@ -110,6 +216,8 @@ const AboutSection = ({ siteTitle }) => (
       <About />
     </AboutGroup>
     <ImagePortfolio src={require("../images/Portfolio_Img.png")} />
+    <SocialFollowWrapper>
+    <Title2>Stalk me</Title2>
     <SocialFollow>
       <SocialImg1>
         <a href="https://codepen.io/brooklee/" target="_blank">
@@ -117,10 +225,20 @@ const AboutSection = ({ siteTitle }) => (
         </a>
       </SocialImg1>
 
-      <SocialImg2 src={require("../images/Git_Logo.png")} />
-      <SocialImg3 src={require("../images/dribbble-ball-mark.svg")} />
-      <SocialImg4 src={require("../images/Behance_Logo.svg")} />
+        <a href="https://github.com/brooklee1" target="_blank">
+         <SocialImg2 src={require("../images/Git_Logo.png")} />
+        </a>
+
+        <a href="https://dribbble.com/brooklee" target="_blank">
+         <SocialImg3 src={require("../images/dribbble-ball-mark.svg")} />
+        </a>
+
+        <a href="https://www.behance.net/brookleewilson" target="_bla</a>nk">
+          <SocialImg4 src={require("../images/Behance_Logo.svg")} />
+        </a>
+
     </SocialFollow>
+    </SocialFollowWrapper>
   </AboutWrapper>
 )
 

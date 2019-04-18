@@ -17,6 +17,11 @@ body {
   overflow-y: scroll;
 }
 
+h2{
+  color: white;
+
+}
+
 a {
   color: #5334f5;
   font-weight: 600;
