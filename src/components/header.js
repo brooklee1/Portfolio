@@ -37,8 +37,8 @@ class Header extends React.Component {
             <img src={require("../images/BW_logo.svg")} />
           </Link>
           <a href="#About">about</a>
-          <Link to="/feautured">feautured</Link>
-          <Link to="/latest">latest</Link>
+          <Link to="/projects">projects</Link>
+          {/* <Link to="/latest">latest</Link> */}
         </div>
       </div>
     )
