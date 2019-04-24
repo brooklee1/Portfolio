@@ -198,13 +198,6 @@ const SocialImg4 = styled.img`
 `
 
 class AboutSection extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      hasScrolled: false,
-    }
-  }
   componentDidMoun() {
     Prism.highlightAll()
   }

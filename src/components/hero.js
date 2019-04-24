@@ -4,6 +4,7 @@ import React from "react"
 import styled from "styled-components"
 
 import "./Hero.css"
+import HomeTitle from "./HomeTitle"
 
 const Herodiv = styled.div`
   background: url("../images/BG_Hero_img.png");
@@ -57,7 +58,9 @@ const Hero = ({ siteTitle }) => (
   <Herodiv>
     <HeroGroup>
       <Header>{"<Ready… Set… Develop! />"}</Header>
+      <HomeTitle />
       <Header2>{"{Web Apps}"}</Header2>
+
       <div>
         <MainImage src={require("../images/Glowing_Laptop.png")} />
       </div>
