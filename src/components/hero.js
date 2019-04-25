@@ -59,7 +59,7 @@ const Hero = ({ siteTitle }) => (
     <HeroGroup>
       <Header>{"<Ready… Set… Develop! />"}</Header>
       <HomeTitle />
-      <Header2>{"{Web Apps}"}</Header2>
+      {/* <Header2>{"{Web Apps}"}</Header2> */}
 
       <div>
         <MainImage src={require("../images/Glowing_Laptop.png")} />

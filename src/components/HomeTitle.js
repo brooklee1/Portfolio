@@ -10,13 +10,12 @@ const TitleAnimatedWrapper = styled.div`
   /* top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
-  height: 160px;
   overflow: hidden;
 
-  font-family: "Lato", sans-serif;
-  font-size: 35px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 30px;
   line-height: 40px;
-  color: #ecf0f1;
+  color: #fff;
   text-align: center;
 `
 
@@ -37,12 +36,12 @@ const TitleAnimatedContainer = styled.div`
     right: 0;
   } */
 
-  &:after,
+  /* &:after,
   &:before {
     position: absolute;
     top: 0;
 
-    color: #16a085;
+    color: #4700ba;
     font-size: 42px;
     line-height: 40px;
 
@@ -52,13 +51,13 @@ const TitleAnimatedContainer = styled.div`
     animation-name: opacity;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-  }
+  } */
 `
 
 const TitleUl = styled.ul`
   margin-top: 0;
   padding-left: 20px;
-  text-align: left;
+  text-align: center;
   list-style: none;
 
   -webkit-animation-name: change;
@@ -78,10 +77,22 @@ const HomeTitle = ({ siteTitle }) => (
   <TitleAnimatedWrapper>
     <TitleAnimatedContainer>
       <TitleUl>
-        <TitleLi>WebApps</TitleLi>
-        <TitleLi>UX/UI</TitleLi>
-        <TitleLi>MobileApp</TitleLi>
-        <TitleLi>Static Sites</TitleLi>
+        <TitleLi>
+          <span className="purpleH2">{"{"}</span>WebApps
+          <span className="purpleH2">{"}"}</span>
+        </TitleLi>
+        <TitleLi>
+          <span className="purpleH2">{"{"}</span>UX/UI
+          <span className="purpleH2">{"}"}</span>
+        </TitleLi>
+        <TitleLi>
+          <span className="purpleH2">{"{"}</span>MobileApp
+          <span className="purpleH2">{"}"}</span>
+        </TitleLi>
+        <TitleLi>
+          <span className="purpleH2">{"{"}</span>WebSites
+          <span className="purpleH2">{"}"}</span>
+        </TitleLi>
       </TitleUl>
     </TitleAnimatedContainer>
   </TitleAnimatedWrapper>
