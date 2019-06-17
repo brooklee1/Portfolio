@@ -2,10 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import Prism from "prismjs"
-import "../global/css/prism.css"
+// import Prism from "prismjs"
+// import "../global/css/prism.css"
 
-Prism.highlightAll()
+// Prism.highlightAll()
 
 const AboutWrapper = styled.div`
   display: grid;
@@ -94,6 +94,10 @@ const SocialFollow = styled.div`
   @media (max-width: 445px) {
     grid-template-columns: repeat(2, auto);
   }
+`
+
+const Code = styled.p`
+   font-family: "Source Code Pro", monospace;
 `
 
 const IFrame = styled.iframe`
@@ -198,9 +202,9 @@ const SocialImg4 = styled.img`
 `
 
 class AboutSection extends React.Component {
-  componentDidMount() {
-    Prism.highlightAll()
-  }
+  // componentDidMount() {
+  //   Prism.highlightAll()
+  // }
 
   render() {
     return (
@@ -210,41 +214,56 @@ class AboutSection extends React.Component {
             <span className="purpleH2">{"<"}</span>About
             <span className="purpleH2">{"/>"}</span>
           </Title>
-          <pre className="language-javascript">
-            <code className="language-javascript">{`Class Brooklee_Watters extends Component {
- 
- ··// Love a good challenge and subscribe to the KISS method
- ··// Always expanding my skill set.
- 
- ··constructor() {
- ····this.name = ‘Brooklee Watters’
- ····this.email = ‘brooklee.wilson@gmail.com’
- ··}
- 
- ··workExperience() {
- ····return [
- ······{ '2018-now' : ‘Web Dev/Designer at Ultradent’ }
- ······{ '2018-2019’: ‘Teacher Aide (web course) at Trillogy’ }
- ······{ '2017-2018’: ‘Web Dev/Analyst at CrossRoads Tech’ }
- ······{ '2012-2017’: 'Graphic Designer at DigiDocs’ }
- ····]
- ··}
- 
- ··education() {
- ····return [
- ······{ '2017-2017’: ‘University of Utah Coding Bootcamp’ },
- ······{ '2010-2012’: ‘Associates Graphic Design’ },
- ····]
- ··}
- 
- ··skills() {
- ····return [ 'HTML/CSS/JS', ‘React.js', 'jQuery', 'Node.js', 
+          {/* <pre className="language-javascript"> */}
+            <Code >{`Class Brooklee_Watters extends Component {`}
+            <br></br>
+            <br></br>
+ {`··// Love a good challenge and subscribe to the KISS method`}
+ <br></br>
+ {`··// Always expanding my skill set.`}
+ <br></br><br></br>
+ {`··constructor() {`}
+ <br></br> 
+ {`····this.name = ‘Brooklee Watters’`}
+ <br></br>
+ {`····this.email = ‘brooklee.wilson@gmail.com’`}`
+ <br></br><br></br>
+ {`··workExperience() {`}
+ <br></br>
+ {`····return [`}
+ {`······{ '2018-now' : ‘Web Dev/Designer at Ultradent’ }`}
+ <br></br>
+ {`······{ '2018-2019’: ‘Teacher Aide (web course) at University Of Utah’ }`}
+ <br></br>
+ {`······{ '2017-2018’: ‘Web Dev/Analyst at CrossRoads Tech’ }`}
+ <br></br>
+ {`······{ '2012-2017’: 'Graphic Designer at DigiDocs’ }`}
+ <br></br>
+ {`····]`}
+ {`··}`}
+ <br></br><br></br>
+ {`··education() {`}
+ <br></br>
+ {`····return [`}
+ <br></br>
+ {`······{ '2017-2017’: ‘University of Utah Coding Bootcamp’ },`}
+ <br></br>
+ {`······{ '2010-2012’: ‘Associates Graphic Design’ },`}
+ <br></br>
+ {`····]`}
+ <br></br>
+ {`··}`}
+ <br></br><br></br>
+ {`··skills() {`}
+ <br></br>
+ {`····return [ 'HTML/CSS/JS', ‘React.js', 'jQuery', 'Node.js', 
  'Bootstrap/Tailwind/Material', 'SASS', 'npm/yarn', 'GIT', 
  'Firebase', ‘MongoDB’, 'MySQL', 'Photoshop', 'Illustrator', 
- 'Sketch', 'UX/UI',]
- ··}
- }`}</code>
-          </pre>
+ 'Sketch', 'UX/UI',]`}
+ <br></br>
+ {`··}`}
+ {`}}`}</Code>
+          {/* </pre> */}
           {/* <IFrame
         src="https://carbon.now.sh/embed/?bg=rgba(1%2C2%2C15%2C1)&t=dracula&wt=bw&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=4x&wm=false&code=Class%2520Brooklee_Watters%2520extends%2520Component%2520%257B%250A%2520%250A%25C2%25B7%25C2%25B7%252F%252F%2520Love%2520a%2520good%2520challenge%2520and%2520subscribe%2520to%2520the%2520KISS%2520method%250A%25C2%25B7%25C2%25B7%252F%252F%2520Always%2520expanding%2520my%2520skill%2520set.%250A%250A%25C2%25B7%25C2%25B7constructor()%2520%257B%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7this.name%2520%253D%2520%25E2%2580%2598Brooklee%2520Watters%25E2%2580%2599%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7this.email%2520%253D%2520%25E2%2580%2598brooklee.wilson%2540gmail.com%25E2%2580%2599%250A%25C2%25B7%25C2%25B7%257D%250A%250A%25C2%25B7%25C2%25B7workExperience()%2520%257B%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7return%2520%255B%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%257B%2520'2018-now'%2520%253A%2520%25E2%2580%2598Web%2520Dev%252FDesigner%2520at%2520Ultradent%25E2%2580%2599%2520%257D%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%257B%2520'2018-2019%25E2%2580%2599%253A%2520%25E2%2580%2598Teacher%2520Aide%2520(web%2520course)%2520at%2520Trillogy%25E2%2580%2599%2520%257D%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%257B%2520'2017-2018%25E2%2580%2599%253A%2520%25E2%2580%2598Web%2520Dev%252FAnalyst%2520at%2520CrossRoads%2520Tech%25E2%2580%2599%2520%257D%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%257B%2520'2012-2017%25E2%2580%2599%253A%2520'Graphic%2520Designer%2520at%2520DigiDocs%25E2%2580%2599%2520%257D%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%255D%250A%25C2%25B7%25C2%25B7%257D%250A%250A%25C2%25B7%25C2%25B7education()%2520%257B%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7return%2520%255B%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%257B%2520'2017-2017%25E2%2580%2599%253A%2520%25E2%2580%2598University%2520of%2520Utah%2520Coding%2520Bootcamp%25E2%2580%2599%2520%257D%252C%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%257B%2520'2010-2012%25E2%2580%2599%253A%2520%25E2%2580%2598Associates%2520Graphic%2520Design%25E2%2580%2599%2520%257D%252C%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7%255D%250A%25C2%25B7%25C2%25B7%257D%250A%250A%25C2%25B7%25C2%25B7skills()%2520%257B%250A%25C2%25B7%25C2%25B7%25C2%25B7%25C2%25B7return%2520%255B%2520'HTML%252FCSS%252FJS'%252C%2520%25E2%2580%2598React.js'%252C%2520'jQuery'%252C%2520'Node.js'%252C%2520'Bootstrap%252FTailwind%252FMaterial'%252C%2520'SASS'%252C%2520'npm%252Fyarn'%252C%2520'GIT'%252C%2520'Firebase%252C%2520%25E2%2580%2598MongoDB%25E2%2580%2599%252C%2520'MySQL'%252C%2520'Photoshop'%252C%2520'Illustrator'%252C%2520'Sketch'%252C%2520'UX%252FUI'%252C%255D%250A%25C2%25B7%25C2%25B7%257D%250A%257D"
         sandbox="allow-scripts allow-same-origin"
