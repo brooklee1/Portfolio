@@ -198,7 +198,7 @@ const SocialImg4 = styled.img`
 `
 
 class AboutSection extends React.Component {
-  componentDidMoun() {
+  componentDidMount() {
     Prism.highlightAll()
   }
 
